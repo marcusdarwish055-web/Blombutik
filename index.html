@@ -1,42 +1,119 @@
-<link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fadisblommor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>Fadisblommor</h1>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu">
+    <a href="buketter.html">Buketter</a>
+    <a href="begravning.html">Begravning & kondoleans</a>
+    <a href="produkter.html">Alla produkter</a>
+    <a href="kontakta.html">Kontakta oss</a>
+    <a href="integritet.html">Integritetspolicy</a>
+    <a href="kopevillkor.html">Köpevillkor</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="varukorg.html">Varukorg</a>
+  </nav>
+
+  <div class="info-bar">
+    <p>Gratis leverans i Södertälje | Betala tryggt med Klarna</p>
+  </div>
+</header>
 
 <main>
   <section class="products">
     <h2>Våra produkter</h2>
     <div class="product-grid">
 
+      <!-- 10 exempelprodukter -->
       <div class="product-card">
-        <img src="bilder/begravning14.png" alt="Kistdekoration 1">
-        <h3>Kistdekoration</h3>
-        <p>Pris: 1999 kr</p>
-        <button onclick="addToCart('Kistdekoration',1999)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="bilder/begravning15.png" alt="Kistdekoration 2">
-        <h3>Kistdekoration</h3>
-        <p>Pris: 1499 kr</p>
-        <button onclick="addToCart('Kistdekoration',1499)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="images/kistdekoration3.jpg" alt="Kistdekoration 3">
-        <h3>Kistdekoration</h3>
-        <p>Pris: 1999 kr</p>
-        <button onclick="addToCart('Kistdekoration',1999)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="images/krans1.jpg" alt="Krans 1">
-        <h3>Krans</h3>
-        <p>Pris: 1499 kr</p>
-        <button onclick="addToCart('Krans',1499)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="images/krans2.jpg" alt="Krans 2">
-        <h3>Krans</h3>
-        <p>Pris: 1499 kr</p>
-        <button onclick="addToCart('Krans',1499)">Lägg i varukorg</button>
+        <img src="bilder/bukett1.jpg" alt="Bukett 1">
+        <h3>Röd Rosbukett</h3>
+        <p>Pris: 499 kr</p>
+        <button onclick="addToCart('Röd Rosbukett',499)">Lägg i varukorg</button>
       </div>
 
-     
+      <div class="product-card">
+        <img src="bilder/bukett2.jpg" alt="Bukett 2">
+        <h3>Vit Liljebukett</h3>
+        <p>Pris: 599 kr</p>
+        <button onclick="addToCart('Vit Liljebukett',599)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett3.jpg" alt="Bukett 3">
+        <h3>Solrosbukett</h3>
+        <p>Pris: 449 kr</p>
+        <button onclick="addToCart('Solrosbukett',449)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett4.jpg" alt="Bukett 4">
+        <h3>Rosa Mix</h3>
+        <p>Pris: 549 kr</p>
+        <button onclick="addToCart('Rosa Mix',549)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett5.jpg" alt="Bukett 5">
+        <h3>Vårbukett Deluxe</h3>
+        <p>Pris: 699 kr</p>
+        <button onclick="addToCart('Vårbukett Deluxe',699)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett6.jpg" alt="Bukett 6">
+        <h3>Tulpanmix</h3>
+        <p>Pris: 399 kr</p>
+        <button onclick="addToCart('Tulpanmix',399)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett7.jpg" alt="Bukett 7">
+        <h3>Romantisk Bukett</h3>
+        <p>Pris: 749 kr</p>
+        <button onclick="addToCart('Romantisk Bukett',749)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett8.jpg" alt="Bukett 8">
+        <h3>Sommarbukett</h3>
+        <p>Pris: 499 kr</p>
+        <button onclick="addToCart('Sommarbukett',499)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett9.jpg" alt="Bukett 9">
+        <h3>Premium Rosor</h3>
+        <p>Pris: 899 kr</p>
+        <button onclick="addToCart('Premium Rosor',899)">Lägg i varukorg</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bilder/bukett10.jpg" alt="Bukett 10">
+        <h3>Elegant Vit</h3>
+        <p>Pris: 629 kr</p>
+        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+      </div>
+
     </div>
   </section>
 </main>
+
+<footer>
+  <p>© 2026 Fadisblommor</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
