@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varukorg</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Varukorg</h1>
+  </header>
+  <main>
+    <div id="cart-content"></div>
+  </main>
+  <script>
+    const cartContent = document.getElementById('cart-content');
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if(cart){
+      cartContent.innerHTML = `<p>${cart.product} - ${cart.price}kr</p>
+      <button onclick="checkout()">Gå till betalning</button>`;
+    } else {
+      cartContent.innerHTML = "<p>Din varukorg är tom</p>";
+    }
+    function checkout(){
+      alert("Här kopplar du Stripe i framtiden.");
+    }
+  </script>
+</body>
+</html>
