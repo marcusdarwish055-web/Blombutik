@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Blomsterbutik</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Min Blomsterbutik</h1>
+      <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+      </div>
+    </div>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="begravning.html">Begravning & kondoleans</a>
+      <a href="buketter.html">Buketter</a>
+      <a href="produkter.html">Alla produkter</a>
+      <a href="kontakta.html">Kontakta oss</a>
+      <a href="returpolicy.html">Returpolicy</a>
+      <a href="kopevillkor.html">Köpevillkor</a>
+      <a href="integritet.html">Integritetspolicy</a>
+      <a href="cookies.html">Cookies</a>
+    </nav>
+    <div class="info-bar">
+      <p>Gratis leverans i Södertälje | Betala tryggt med Klarna</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="products">
+      <h2>Våra produkter</h2>
+      <div class="product-grid">
+        <!-- Exempel på produkter -->
+        <div class="product-card">
+          <img src="images/blomma1.jpg" alt="Produkt 1">
+          <h3>Röd Ros</h3>
+          <p>Pris: 150kr</p>
+          <button onclick="addToCart('Röd Ros',150)">Lägg i varukorg</button>
+        </div>
+        <div class="product-card">
+          <img src="images/blomma2.jpg" alt="Produkt 2">
+          <h3>Vita Liljor</h3>
+          <p>Pris: 200kr</p>
+          <button onclick="addToCart('Vita Liljor',200)">Lägg i varukorg</button>
+        </div>
+        <!-- Lägg till upp till 30 produkter på samma sätt -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Min Blomsterbutik</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
