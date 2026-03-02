@@ -1,22 +1,20 @@
-/* ===== RESET ===== */
+/* ===== Allmänt ===== */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
   background: #f2f2f2;
   color: #000;
 }
 
-/* ===== HEADER ===== */
+/* ===== Header ===== */
 header {
   background-color: #000;
   color: #fff;
-  padding: 15px 20px;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -30,37 +28,40 @@ header {
 
 header h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  flex: 1;
-  text-align: center;
+  font-size: 48px;
+  margin: 0;
   color: #fff;
+  text-align: center;
+  flex: 1;
 }
 
 .menu-toggle,
 .cart-icon {
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   color: #fff;
   text-decoration: none;
 }
 
-/* ===== NAV ===== */
+/* ===== Navigering ===== */
 .nav-menu {
   display: none;
   flex-direction: column;
+  margin-top: 10px;
   background-color: #000;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .nav-menu a {
-  color: #fff;
   text-decoration: none;
+  color: #fff;
   padding: 8px 0;
   font-weight: bold;
 }
 
 .nav-menu a:hover {
-  background: #333;
+  background-color: #333;
   border-radius: 5px;
 }
 
@@ -68,166 +69,112 @@ header h1 {
   display: flex;
 }
 
-/* ===== INFO BAR ===== */
+/* ===== Info-bar ===== */
 .info-bar {
-  background: #fff;
+  background-color: #000; /* svart bakgrund */
+  color: #fff;           /* vit text */
   text-align: center;
-  padding: 8px;
+  padding: 10px 20px;    /* mer luft runt texten */
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;      /* rundade hörn */
+  margin: 10px auto;       /* centrerad med utrymme */
+  width: fit-content;      /* anpassar bredden efter texten */
 }
 
-/* ===== PRODUKT GRID ===== */
+/* ===== Produktsektion ===== */
 .products h2 {
   text-align: center;
-  margin: 25px 0;
+  margin-top: 20px;
 }
 
+/* ===== Produktgrid ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
   gap: 20px;
   padding: 20px;
 }
 
-/* ===== PRODUKT LÄNK (tar bort blå text) ===== */
-.product-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.product-link:visited,
-.product-link:hover,
-.product-link:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* ===== PRODUKTKORT ===== */
+/* ===== Produktkort ===== */
 .product-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
   height: 100%;
-  transition: 0.2s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
 }
 
 .product-card img {
   width: 100%;
   height: 250px;
-  object-fit: contain; /* Ingen inzoomning */
+  object-fit: contain;      /* behåller proportioner */
   border-radius: 10px;
   margin-bottom: 10px;
+  border: 1px solid #000;  /* tunn svart ram runt bild */
 }
 
 .product-card h3 {
-  font-size: 18px;
   margin: 5px 0;
-  color: #000; /* Svart text */
-  text-decoration: none;
+  font-size: 18px;
+  min-height: 45px; /* håller korten jämna */
+  color: #000;      /* svart text */
+  text-decoration: none; /* inget understryk */
 }
 
 .product-card .price {
+  margin: 5px 0 10px 0;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #000; /* Svart text */
+  color: #000;        /* svart text */
+  text-decoration: none;
 }
 
-/* ===== KNAPP (startsida + produktsida samma stil) ===== */
-.product-card button,
-.product-info button {
-  background-color: #000;
-  color: #fff; /* Vit text */
-  border: 2px solid #000; /* Svart runt */
-  padding: 12px;
+.product-card a.product-link {
+  text-decoration: none; /* tar bort blå understrykning på klickbar produkt */
+}
+
+.product-card button {
+  background-color: #000; /* svart bakgrund */
+  color: #fff;            /* vit text */
+  border: none;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
   margin-top: auto;
-  transition: 0.2s;
-}
-
-.product-card button:hover,
-.product-info button:hover {
-  background-color: #333;
-  border-color: #333;
-}
-
-/* ===== PRODUKTSIDA ===== */
-.product-detail {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 30px;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-}
-
-.product-detail img {
-  width: 100%;
-  max-width: 500px;
-  height: 450px;
-  object-fit: contain; /* Stoppar inzoomning */
-  border-radius: 10px;
-}
-
-.product-info {
-  flex: 1;
-}
-
-.product-info h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.product-info .price {
   font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 20px;
+  transition: background 0.2s;
 }
 
-.product-info p {
-  line-height: 1.6;
-  margin-bottom: 25px;
+.product-card button:hover {
+  background-color: #333;
 }
 
-/* ===== FOOTER ===== */
+/* ===== Footer ===== */
 footer {
-  background: #000;
-  color: #fff;
   text-align: center;
   padding: 15px;
-  margin-top: 40px;
+  background-color: #000;
+  color: #fff;
 }
 
-/* ===== RESPONSIVE ===== */
-
-/* Laptop */
+/* ===== Laptop ===== */
 @media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Mobil */
+/* ===== Tablet / Mobil ===== */
 @media (max-width: 768px) {
-
   header h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
     padding: 10px;
   }
@@ -238,6 +185,7 @@ footer {
 
   .product-card h3 {
     font-size: 14px;
+    min-height: 40px;
   }
 
   .product-card .price {
@@ -248,23 +196,5 @@ footer {
     font-size: 13px;
     padding: 8px;
   }
-
-  .product-detail {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .product-detail img {
-    height: 300px;
-
-/* ===== INFO BAR (Gratis hemleverans...) ===== */
-
-.info-bar {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 8px 10px;
-  font-size: 14px;
-  font-weight: 500;
- }
 }
+
