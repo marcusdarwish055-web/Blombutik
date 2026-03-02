@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fadisblommor</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Lägg till Google Fonts för skrivstil -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,10 +13,8 @@
   <div class="header-container">
     <!-- Meny-ikonen vänster -->
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    
     <!-- Hemsidans namn -->
     <h1>Fadisblommor</h1>
-    
     <!-- Varukorg-ikon höger -->
     <a href="varukorg.html" class="cart-icon">&#128722;</a>
   </div>
@@ -43,139 +40,187 @@
     <h2>Våra produkter</h2>
     <div class="product-grid">
 
-      <!-- 10 exempelprodukter -->
+      <!-- Produkt 1 -->
       <div class="product-card">
         <img src="bilder/bukett1.jpeg" alt="Bukett 1">
-        <h3>Röd Rosbukett</h3>
-        <p>Pris: 499 kr</p>
-        <button onclick="addToCart('Röd Rosbukett',499)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Röd Rosbukett</h3>
+          <p>499</p>
+          <button onclick="addToCart('Röd Rosbukett',499)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 2 -->
       <div class="product-card">
         <img src="bilder/bukett2.png" alt="Bukett 2">
-        <h3>Vit Liljebukett</h3>
-        <p>Pris: 599 kr</p>
-        <button onclick="addToCart('Vit Liljebukett',599)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Vit Liljebukett</h3>
+          <p>599</p>
+          <button onclick="addToCart('Vit Liljebukett',599)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 3 -->
       <div class="product-card">
         <img src="bilder/bukett3.png" alt="Bukett 3">
-        <h3>Solrosbukett</h3>
-        <p>Pris: 449 kr</p>
-        <button onclick="addToCart('Solrosbukett',449)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Solrosbukett</h3>
+          <p>449</p>
+          <button onclick="addToCart('Solrosbukett',449)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 4 -->
       <div class="product-card">
         <img src="bilder/bukett4.png" alt="Bukett 4">
-        <h3>Rosa Mix</h3>
-        <p>Pris: 549 kr</p>
-        <button onclick="addToCart('Rosa Mix',549)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Rosa Mix</h3>
+          <p>549</p>
+          <button onclick="addToCart('Rosa Mix',549)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 5 -->
       <div class="product-card">
         <img src="bilder/bukett5.png" alt="Bukett 5">
-        <h3>Vårbukett Deluxe</h3>
-        <p>Pris: 699 kr</p>
-        <button onclick="addToCart('Vårbukett Deluxe',699)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Vårbukett Deluxe</h3>
+          <p>699</p>
+          <button onclick="addToCart('Vårbukett Deluxe',699)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 6 -->
       <div class="product-card">
         <img src="bilder/bukett6.png" alt="Bukett 6">
-        <h3>Tulpanmix</h3>
-        <p>Pris: 399 kr</p>
-        <button onclick="addToCart('Tulpanmix',399)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Tulpanmix</h3>
+          <p>399</p>
+          <button onclick="addToCart('Tulpanmix',399)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 7 -->
       <div class="product-card">
         <img src="bilder/bukett7.png" alt="Bukett 7">
-        <h3>Romantisk Bukett</h3>
-        <p>Pris: 749 kr</p>
-        <button onclick="addToCart('Romantisk Bukett',749)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Romantisk Bukett</h3>
+          <p>749</p>
+          <button onclick="addToCart('Romantisk Bukett',749)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 8 -->
       <div class="product-card">
         <img src="bilder/bukett8.png" alt="Bukett 8">
-        <h3>Sommarbukett</h3>
-        <p>Pris: 499 kr</p>
-        <button onclick="addToCart('Sommarbukett',499)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Sommarbukett</h3>
+          <p>499</p>
+          <button onclick="addToCart('Sommarbukett',499)">Lägg i varukorg</button>
+        </div>
       </div>
 
+      <!-- Produkt 9 -->
       <div class="product-card">
         <img src="bilder/bukett10.png" alt="Bukett 9">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 10 -->
       <div class="product-card">
         <img src="bilder/begravning1.png" alt="Bukett 10">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 11 -->
       <div class="product-card">
         <img src="bilder/begravning2.png" alt="Bukett 11">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 12 -->
       <div class="product-card">
         <img src="bilder/begravning3.png" alt="Bukett 12">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 13 -->
       <div class="product-card">
         <img src="bilder/begravning4.png" alt="Bukett 13">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 14 -->
       <div class="product-card">
         <img src="bilder/begravning5.jpeg" alt="Bukett 14">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 15 -->
       <div class="product-card">
         <img src="bilder/begravning6.png" alt="Bukett 15">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 16 -->
       <div class="product-card">
         <img src="bilder/begravning7.png" alt="Bukett 16">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 17 -->
       <div class="product-card">
         <img src="bilder/begravning8.png" alt="Bukett 17">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
+
+      <!-- Produkt 18 -->
       <div class="product-card">
         <img src="bilder/begravning9.png" alt="Bukett 18">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        <div class="overlay-text">
+          <h3>Elegant Vit</h3>
+          <p>629</p>
+          <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
+        </div>
       </div>
-      
-      <div class="product-card">
-        <img src="bilder/begravning10.png" alt="Bukett 19">
-        <h3>Elegant Vit</h3>
-        <p>Pris: 629 kr</p>
-        <button onclick="addToCart('Elegant Vit',629)">Lägg i varukorg</button>
-      </div>
+
+    </div>
   </section>
 </main>
 
