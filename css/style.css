@@ -46,18 +46,22 @@ header {
   text-align: center;
 }
 
-/* Produktgrid */
+/* Produktgrid med jämn höjd */
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  justify-content: center;
+  justify-items: center;
   padding: 20px;
 }
 
-/* Produktkort */
+/* Produktkort med samma höjd */
 .product-card {
-  width: 250px;          /* Fast bredd */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 400px; /* alla kort samma höjd */
   background: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -65,12 +69,12 @@ header {
   box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
 }
 
-/* Bilder – hela buketten syns */
+/* Bilder – behåller proportioner */
 .product-card img {
   width: 100%;
-  height: auto;         /* låter bilden behålla proportioner */
-  max-height: 250px;    /* justera för önskad maxhöjd */
-  object-fit: contain;   /* hela bilden visas utan beskärning */
+  height: auto;
+  max-height: 200px; /* bild max 200px hög */
+  object-fit: contain; /* hela bilden syns */
   border-radius: 10px;
 }
 
