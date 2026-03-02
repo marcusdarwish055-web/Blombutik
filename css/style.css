@@ -92,11 +92,11 @@ header h1 {
 
 .product-card img {
   width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: contain;
+  height: 250px;       
+  object-fit: contain;  
   margin-bottom: 10px;
   border-radius: 10px;
+
 }
 
 /* Knapp */
