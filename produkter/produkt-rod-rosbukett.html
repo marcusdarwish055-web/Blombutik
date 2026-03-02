@@ -27,23 +27,49 @@
     <a href="../varukorg.html">Varukorg</a>
   </nav>
 
-  <div class="info-bar">
+  <div class="info-bar info-bar-black">
     <p>Gratis hemleverans i Södertälje | Betala tryggt med Klarna</p>
   </div>
 </header>
 
 <main>
-  <section class="product-single">
-    <div class="product-card">
+  <section class="product-detail">
+    <div class="product-image">
       <img src="../bilder/bukett1.jpeg" alt="Röd Rosbukett">
+    </div>
+    <div class="product-info">
       <h2>Röd Rosbukett</h2>
       <p class="price">499 kr</p>
-      <p class="description">
-        Vacker röd rosbukett, perfekt som gåva eller dekoration. Innehåller 12 röda rosor, fräscha och doftande.
-      </p>
-      <button onclick="addToCart('Röd Rosbukett', 499)">
-        Lägg till i varukorg
-      </button>
+      <p>En vacker bukett med röda rosor, perfekt för alla tillfällen. Levereras färsk och fint inslagen.</p>
+      <button onclick="addToCart('Röd Rosbukett',499)">Lägg till i varukorg</button>
+    </div>
+  </section>
+
+  <!-- Du kanske gillar -->
+  <section class="related-products">
+    <h2>Du kanske gillar</h2>
+    <div class="related-grid">
+
+      <!-- Produkt 1 -->
+      <div class="product-card">
+        <a href="produkt-vit-liljebukett.html" class="product-link">
+          <img src="../bilder/bukett2.png" alt="Vit Liljebukett">
+          <h3>Vit Liljebukett</h3>
+          <p class="price">599 kr</p>
+        </a>
+        <button onclick="addToCart('Vit Liljebukett',599)">Lägg till i varukorg</button>
+      </div>
+
+      <!-- Produkt 2 -->
+      <div class="product-card">
+        <a href="produkt-solrosbukett.html" class="product-link">
+          <img src="../bilder/bukett3.png" alt="Solrosbukett">
+          <h3>Solrosbukett</h3>
+          <p class="price">449 kr</p>
+        </a>
+        <button onclick="addToCart('Solrosbukett',449)">Lägg till i varukorg</button>
+      </div>
+
     </div>
   </section>
 </main>
