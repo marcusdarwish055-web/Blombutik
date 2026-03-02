@@ -108,9 +108,10 @@ header h1 {
 .product-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* bilden fyller kortet helt utan tomrum */
+  object-fit: contain; /* bilden syns helt utan klippning */
   margin-bottom: 10px;
   border-radius: 10px;
+  display: block;
 }
 
 /* Produktnamn */
@@ -130,7 +131,7 @@ header h1 {
 /* Knapp */
 button {
   background-color: #000; /* svart knapp */
-  color: #fff;
+  color: #fff; /* vit text */
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -157,9 +158,13 @@ footer {
   header h1 {
     font-size: 36px;
   }
-  
+
+  /* Två produkter bredvid varandra utan horisontell scroll */
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 produkter bredvid varandra på mobil */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* två kolumner */
+    gap: 10px;
+    padding: 10px;
   }
 
   .product-card {
@@ -167,7 +172,15 @@ footer {
   }
 
   .product-card img {
-    height: 100%;
+    height: auto;          /* automatiskt så hela bilden syns */
+    max-width: 100%;       /* aldrig utanför kortet */
+    object-fit: contain;   /* fyller kortet utan klippning */
+  }
+
+  /* Text och knapp anpassas */
+  .product-card h3,
+  .product-card .price,
+  .product-card button {
+    font-size: 14px;
   }
 }
-
