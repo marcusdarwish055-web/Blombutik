@@ -2,13 +2,13 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #ffe6f0; /* ljus rosa bakgrund */
-  color: #000;
+  background: #000; /* svart bakgrund */
+  color: #fff;
 }
 
 /* ===== Header ===== */
 header {
-  background-color: #000;
+  background-color: #111; /* mörk svart */
   color: #fff;
   padding: 10px 20px;
   position: sticky;
@@ -28,7 +28,7 @@ header h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
   margin: 0;
-  color: #ff4da6; /* rosa */
+  color: gold; /* guld text */
   text-align: center;
   flex: 1;
 }
@@ -37,13 +37,13 @@ header h1 {
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
-  color: #ff4da6;
+  color: silver; /* silver färg på meny-ikon */
 }
 
 /* Varukorg-ikon höger */
 .cart-icon {
   font-size: 28px;
-  color: #ff4da6;
+  color: gold; /* guld färg */
   text-decoration: none;
 }
 
@@ -52,21 +52,22 @@ header h1 {
   display: none;
   flex-direction: column;
   margin-top: 10px;
-  background-color: #ff4da6;
+  background-color: #222; /* mörk bakgrund för meny */
   padding: 10px;
   border-radius: 5px;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: #fff;
+  color: gold;
   padding: 8px 0;
   font-weight: bold;
   transition: background 0.2s;
 }
 
 .nav-menu a:hover {
-  background-color: #e60073;
+  background-color: silver;
+  color: #000;
   border-radius: 5px;
 }
 
@@ -77,8 +78,8 @@ header h1 {
 
 /* ===== Info-bar ===== */
 .info-bar {
-  background-color: #ff99cc;
-  color: #000;
+  background-color: #333; /* mörkgrå bar */
+  color: gold;
   padding: 5px 20px;
   text-align: center;
 }
@@ -94,77 +95,65 @@ header h1 {
 
 /* ===== Produktkort ===== */
 .product-card {
-  position: relative; /* overlay */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #fff0f5;
+  background: #111; /* mörk bakgrund */
+  border: 2px solid silver;
   border-radius: 10px;
-  overflow: hidden; /* hindrar text från att sticka ut */
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
-  min-height: 450px;
-}
-
-/* Bild */
-.product-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* hela bilden syns */
-}
-
-/* Overlay-text längst ner på bilden */
-.overlay-text {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(255, 77, 166, 0.85); /* rosa med transparens */
-  color: #fff;
   padding: 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  box-shadow: 0px 3px 10px rgba(255,215,0,0.3); /* guld skugga */
+  min-height: 450px; /* alla kort samma höjd */
 }
 
-/* Produktnamn i overlay */
-.overlay-text h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Pris (bara nummer) */
-.overlay-text p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Knapp under priset */
-.overlay-text button {
+.product-card img {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  height: 250px;
+  object-fit: contain; /* hela bilden syns */
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+
+/* Produktnamn */
+.product-card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: gold;
+}
+
+/* Pris */
+.product-card p {
+  margin: 5px 0;
   font-weight: bold;
-  border-radius: 5px;
+  color: silver;
+}
+
+/* Knapp */
+button {
+  background-color: gold;
+  color: #000;
   border: none;
-  background-color: #fff;
-  color: #ff4da6;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  margin-top: auto; /* knappen hamnar längst ner */
+  font-weight: bold;
   transition: background 0.2s, color 0.2s;
 }
 
-.overlay-text button:hover {
-  background-color: #ff4da6;
-  color: #fff;
+button:hover {
+  background-color: silver;
+  color: #000;
 }
 
 /* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 15px;
-  background-color: #000;
-  color: #ff4da6;
+  background-color: #111;
+  color: gold;
 }
 
 /* ===== Responsivt ===== */
@@ -173,26 +162,15 @@ footer {
     font-size: 36px;
   }
 
-  /* Mobil: två kolumner */
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .product-card {
+    min-height: 400px;
   }
 
-  /* Bilder på mobilen fyller hela kortet */
   .product-card img {
-    height: auto; 
-    max-height: none;
+    height: 200px;
   }
 
-  .overlay-text h3 {
-    font-size: 14px;
-  }
-
-  .overlay-text p {
-    font-size: 14px;
-  }
-
-  .overlay-text button {
-    font-size: 14px;
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 produkter bredvid varandra */
   }
 }
