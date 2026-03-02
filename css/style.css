@@ -10,26 +10,38 @@ body {
 header {
   background-color: #000;
   color: #fff;
-  padding: 15px 20px;
+  padding: 10px 20px;
 }
 
+/* Header-container: meny vänster, namn mitten, varukorg höger */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hemsidans namn */
 header h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
   margin: 0;
-  color: #ff4da6; /* rosa text */
+  color: #ff4da6; /* rosa */
+  text-align: center;
+  flex: 1;
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Meny-ikon vänster */
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
   color: #ff4da6;
+}
+
+/* Varukorg-ikon höger */
+.cart-icon {
+  font-size: 28px;
+  color: #ff4da6;
+  text-decoration: none;
 }
 
 /* Navigering */
@@ -109,4 +121,9 @@ footer {
   padding: 10px;
   background-color: #000;
   color: #ff4da6;
+}
+
+/* Aktiv meny för mobil */
+.nav-menu.active {
+  display: flex;
 }
