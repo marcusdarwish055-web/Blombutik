@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varukorg - Fadisblommor</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Extra styling för varukorg */
+    .cart-container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-item button:hover {
+      background: #cc0000;
+    }
+
+    .total-price {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>Fadisblommor</h1>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+
+  <nav id="nav-menu" class="nav-menu">
+    <a href="buketter.html">Buketter</a>
+    <a href="begravning.html">Begravning & kondoleans</a>
+    <a href="produkter.html">Alla produkter</a>
+    <a href="kontakta.html">Kontakta oss</a>
+    <a href="integritet.html">Integritetspolicy</a>
+    <a href="kopevillkor.html">Köpevillkor</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="varukorg.html">Varukorg</a>
+  </nav>
+
+  <div class="info-bar">
+    <p>Gratis leverans i Södertälje | Betala tryggt med Klarna</p>
+  </div>
+</header>
+
+<main>
+  <div class="cart-container">
+    <h2>Din varukorg</h2>
+    <div id="cart-items">
+      <!-- Produkterna laddas här med JavaScript -->
+    </div>
+    <div class="total-price" id="total-price">Totalt: 0 kr</div>
+    <button id="clear-cart" style="margin-top:10px;">Töm varukorg</button>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Fadisblommor</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  const cartContainer = document.getElementById('cart-items');
+  const totalPriceEl = document.getElementById('total-price');
+  const clearCartBtn = document.getElementById('clear-cart');
+
+  // Ladda varukorgen från localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function renderCart() {
+    cartContainer.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+
+      const cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+
+      cartItem.innerHTML = `
+        <img src="bilder/${item.product.toLowerCase().replace(/ /g, '')}.png" alt="${item.product}">
+        <div class="cart-item-info">
+          <h4>${item.product}</h4>
+          <p>Pris: ${item.price} kr</p>
+        </div>
+        <button onclick="removeItem(${index})">Ta bort</button>
+      `;
+
+      cartContainer.appendChild(cartItem);
+    });
+
+    totalPriceEl.textContent = `Totalt: ${total} kr`;
+
+    if(cart.length === 0) {
+      cartContainer.innerHTML = '<p>Din varukorg är tom.</p>';
+      totalPriceEl.textContent = '';
+    }
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>
