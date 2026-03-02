@@ -2,14 +2,22 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff0f5;
+  background: #ffe6f0; /* ljus rosa bakgrund */
+  color: #000;
 }
 
 /* Header */
 header {
-  background: #ff4d4d;
-  color: white;
-  padding: 10px 20px;
+  background: #000; /* svart bakgrund */
+  color: #fff;
+  padding: 15px 20px;
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive; /* skrivstil */
+  font-size: 48px;
+  margin: 0;
+  color: #ff4da6; /* rosa text */
 }
 
 .header-container {
@@ -21,6 +29,7 @@ header {
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
+  color: #ff4da6; /* rosa menyikon */
 }
 
 /* Navigering */
@@ -28,25 +37,26 @@ header {
   display: none;
   flex-direction: column;
   margin-top: 10px;
-  background: #ff6666;
+  background: #ff4da6; /* rosa bakgrund */
   padding: 10px;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   padding: 5px 0;
+  font-weight: bold;
 }
 
 /* Info-bar */
 .info-bar {
-  background: #ffb84d;
-  color: black;
+  background: #ff99cc; /* ljusare rosa */
+  color: #000;
   padding: 5px 20px;
   text-align: center;
 }
 
-/* Produktgrid med jämna rader */
+/* Produktgrid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -59,44 +69,44 @@ header {
 .product-card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* gör att bild hamnar högst upp */
-  background: #fff;
+  justify-content: flex-start;
+  background: #fff0f5; /* rosa bakgrund för kort */
   border-radius: 10px;
   padding: 10px;
   text-align: center;
   box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
-  min-height: 400px; /* alla kort minst samma höjd */
+  min-height: 400px;
 }
 
-/* Bilden – behåll proportioner och visas helt */
 .product-card img {
   width: 100%;
-  height: auto;        /* viktig – behåll proportioner */
-  max-height: 250px;   /* anpassa efter hur stora bilder du vill ha */
-  object-fit: contain;  /* hela bilden syns */
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
 /* Knapp */
 button {
-  background: #ff4d4d;
+  background: #ff4da6;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto; /* trycker ner knappen till botten av kortet */
+  margin-top: auto;
+  font-weight: bold;
 }
 
 button:hover {
-  background: #cc0000;
+  background: #e60073;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 10px;
-  background: #ff4d4d;
-  color: white;
+  background: #000;
+  color: #ff4da6;
 }
