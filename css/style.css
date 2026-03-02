@@ -256,5 +256,15 @@ footer {
 
   .product-detail img {
     height: 300px;
-  }
+
+/* ===== INFO BAR (Gratis hemleverans...) ===== */
+
+.info-bar {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+   }
 }
