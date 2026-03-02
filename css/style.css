@@ -1,4 +1,8 @@
 /* ===== Allmänt ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -22,7 +26,6 @@ header {
   justify-content: space-between;
 }
 
-/* Logga */
 header h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
@@ -32,7 +35,6 @@ header h1 {
   flex: 1;
 }
 
-/* Meny & varukorg */
 .menu-toggle,
 .cart-icon {
   font-size: 28px;
@@ -75,10 +77,16 @@ header h1 {
   text-align: center;
 }
 
+/* ===== Produktsektion ===== */
+.products h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
 /* ===== Produktgrid ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
   gap: 20px;
   padding: 20px;
 }
@@ -95,7 +103,6 @@ header h1 {
   height: 100%;
 }
 
-/* Bild-wrapper för jämn höjd */
 .product-card img {
   width: 100%;
   height: 250px;
@@ -104,22 +111,17 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* Produktnamn */
 .product-card h3 {
   margin: 5px 0;
   font-size: 18px;
-  color: #000;
-  min-height: 45px; /* gör så titlar inte flyttar knappen */
+  min-height: 45px; /* håller knappen jämn */
 }
 
-/* Pris */
 .product-card .price {
   margin: 5px 0 10px 0;
   font-weight: bold;
-  color: #000;
 }
 
-/* Knapp */
 .product-card button {
   background-color: #000;
   color: #fff;
@@ -144,15 +146,21 @@ footer {
   color: #fff;
 }
 
+/* ===== Laptop ===== */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* ===== Mobil ===== */
 @media (max-width: 768px) {
-
   header h1 {
     font-size: 32px;
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
     padding: 10px;
   }
