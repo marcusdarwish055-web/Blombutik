@@ -2,13 +2,13 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff; /* vit bakgrund */
-  color: #000;      /* svart text */
+  background: #f2f2f2; /* ljusgrå bakgrund */
+  color: #000;
 }
 
 /* ===== Header ===== */
 header {
-  background-color: #000; /* svart header */
+  background-color: #000;
   color: #fff;
   padding: 10px 20px;
   position: sticky;
@@ -76,11 +76,10 @@ header h1 {
 
 /* ===== Info-bar ===== */
 .info-bar {
-  background-color: #fff; /* vit info-bar */
+  background-color: #fff;
   color: #000;
   padding: 5px 20px;
   text-align: center;
-  border-bottom: 1px solid #ccc;
 }
 
 /* ===== Produktgrid ===== */
@@ -98,22 +97,21 @@ header h1 {
   flex-direction: column;
   justify-content: flex-start;
   background: #fff;
-  border: 1px solid #000;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-  min-height: 450px; /* samma höjd för alla kort */
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+  min-height: 450px;
 }
 
 /* Bild */
 .product-card img {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* hela bilden syns */
+  flex: 1 0 auto;      /* fyller kortet proportionerligt */
+  object-fit: contain;  /* hela bilden syns */
   margin-bottom: 10px;
   border-radius: 10px;
-  flex-shrink: 0;
+  display: block;
 }
 
 /* Produktnamn */
@@ -124,7 +122,7 @@ header h1 {
 }
 
 /* Pris */
-.product-card p.price {
+.product-card .price {
   margin: 5px 0;
   font-weight: bold;
   color: #000;
@@ -132,13 +130,13 @@ header h1 {
 
 /* Knapp */
 button {
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* svart knapp */
+  color: #fff;            /* vit text */
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto; /* knappen hamnar alltid längst ner */
+  margin-top: auto;       /* knappen hamnar längst ner */
   font-weight: bold;
   transition: background 0.2s;
 }
@@ -157,10 +155,31 @@ footer {
 
 /* ===== Responsivt ===== */
 @media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* två kort bredvid varandra */
+  header h1 {
+    font-size: 36px;
   }
+
+  /* Två produkter bredvid varandra */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .product-card {
+    min-height: 350px;
+  }
+
   .product-card img {
-    height: auto; /* behåll proportioner */
+    height: auto;          /* hela bilden syns */
+    max-width: 100%;       /* aldrig utanför kortet */
+    object-fit: contain;   /* fyller kortet utan att klippas */
+  }
+
+  /* Text och knapp anpassas */
+  .product-card h3,
+  .product-card .price,
+  .product-card button {
+    font-size: 14px;
   }
 }
