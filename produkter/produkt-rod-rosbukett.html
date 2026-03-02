@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Röd Rosbukett | Fadisblommor</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,18 +13,18 @@
   <div class="header-container">
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     <h1>Fadisblommor</h1>
-    <a href="varukorg.html" class="cart-icon">&#128722;</a>
+    <a href="../varukorg.html" class="cart-icon">&#128722;</a>
   </div>
 
   <nav id="nav-menu" class="nav-menu">
-    <a href="buketter.html">Buketter</a>
-    <a href="begravning.html">Begravning & kondoleans</a>
-    <a href="produkter.html">Alla produkter</a>
-    <a href="kontakta.html">Kontakta oss</a>
-    <a href="integritet.html">Integritetspolicy</a>
-    <a href="kopevillkor.html">Köpevillkor</a>
-    <a href="cookies.html">Cookies</a>
-    <a href="varukorg.html">Varukorg</a>
+    <a href="../begravning.html">Välj begravning & kondoleans</a>
+    <a href="../buketter.html">Välj buketter</a>
+    <a href="../produkter.html">Alla produkter</a>
+    <a href="../kontakta.html">Kontakta oss</a>
+    <a href="../integritet.html">Integritetspolicy</a>
+    <a href="../kopevillkor.html">Köpevillkor</a>
+    <a href="../cookies.html">Cookies</a>
+    <a href="../varukorg.html">Varukorg</a>
   </nav>
 
   <div class="info-bar">
@@ -33,38 +33,17 @@
 </header>
 
 <main>
-  <section class="single-product">
-    <div class="product-detail">
-      <img src="bilder/bukett1.jpeg" alt="Röd Rosbukett">
-      <div class="product-info">
-        <h2>Röd Rosbukett</h2>
-        <p class="price">499 kr</p>
-        <p class="description">
-          En elegant bukett med röda rosor som passar perfekt för romantiska tillfällen eller för att glädja någon du tycker om.  
-          Levereras färdigbundet med vackert omslagspapper.
-        </p>
-        <button onclick="addToCart('Röd Rosbukett',499)">Lägg till i varukorg</button>
-      </div>
-    </div>
-
-    <div class="related-products">
-      <h3>Du kanske gillar</h3>
-      <div class="product-grid">
-        <div class="product-card">
-          <a href="produkt2.html">
-            <img src="bilder/bukett2.png" alt="Vit Liljebukett">
-            <h3>Vit Liljebukett</h3>
-          </a>
-          <p class="price">599 kr</p>
-        </div>
-        <div class="product-card">
-          <a href="produkt3.html">
-            <img src="bilder/bukett3.png" alt="Solrosbukett">
-            <h3>Solrosbukett</h3>
-          </a>
-          <p class="price">449 kr</p>
-        </div>
-      </div>
+  <section class="product-single">
+    <div class="product-card">
+      <img src="../bilder/bukett1.jpeg" alt="Röd Rosbukett">
+      <h2>Röd Rosbukett</h2>
+      <p class="price">499 kr</p>
+      <p class="description">
+        Vacker röd rosbukett, perfekt som gåva eller dekoration. Innehåller 12 röda rosor, fräscha och doftande.
+      </p>
+      <button onclick="addToCart('Röd Rosbukett', 499)">
+        Lägg till i varukorg
+      </button>
     </div>
   </section>
 </main>
@@ -73,6 +52,6 @@
   <p>© 2026 Fadisblommor</p>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>
