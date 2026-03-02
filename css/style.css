@@ -55,8 +55,9 @@ header {
   padding: 20px;
 }
 
+/* Produktkort */
 .product-card {
-  width: 250px;
+  width: 250px;          /* Fast bredd */
   background: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -64,10 +65,12 @@ header {
   box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
 }
 
+/* Bilder – hela buketten syns */
 .product-card img {
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
+  height: auto;         /* låter bilden behålla proportioner */
+  max-height: 250px;    /* justera för önskad maxhöjd */
+  object-fit: contain;   /* hela bilden visas utan beskärning */
   border-radius: 10px;
 }
 
@@ -79,6 +82,7 @@ button {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 button:hover {
