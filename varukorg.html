@@ -5,64 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Varukorg - Fadisblommor</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Extra styling för varukorg */
-    .cart-container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .cart-item img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      border-radius: 8px;
-      margin-right: 10px;
-    }
-
-    .cart-item-info {
-      flex: 1;
-    }
-
-    .cart-item button {
-      background: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .cart-item button:hover {
-      background: #cc0000;
-    }
-
-    .total-price {
-      text-align: right;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
   <div class="header-container">
-    <h1>Fadisblommor</h1>
+    <!-- Meny-ikonen vänster -->
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <!-- Hemsidans namn -->
+    <h1>Fadisblommor</h1>
+    <!-- Varukorg-ikon höger -->
+    <a href="varukorg.html" class="cart-icon">&#128722;</a>
   </div>
 
   <nav id="nav-menu" class="nav-menu">
@@ -82,72 +36,65 @@
 </header>
 
 <main>
-  <div class="cart-container">
+  <section class="cart">
     <h2>Din varukorg</h2>
-    <div id="cart-items">
-      <!-- Produkterna laddas här med JavaScript -->
+    <div id="cart-items" class="product-grid">
+      <!-- Produkter från localStorage hamnar här -->
     </div>
-    <div class="total-price" id="total-price">Totalt: 0 kr</div>
-    <button id="clear-cart" style="margin-top:10px;">Töm varukorg</button>
-  </div>
+    <div class="cart-total">
+      <p>Totalt: <span id="total-price">0</span> kr</p>
+      <button id="clear-cart">Rensa varukorg</button>
+    </div>
+  </section>
 </main>
 
 <footer>
   <p>© 2026 Fadisblommor</p>
 </footer>
 
-<script src="js/script.js"></script>
 <script>
+// Visa/göm meny
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+menuToggle.addEventListener('click', () => {
+  navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Hämta varukorgen från localStorage
+function displayCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartContainer = document.getElementById('cart-items');
-  const totalPriceEl = document.getElementById('total-price');
-  const clearCartBtn = document.getElementById('clear-cart');
+  cartContainer.innerHTML = '';
 
-  // Ladda varukorgen från localStorage
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let total = 0;
 
-  function renderCart() {
-    cartContainer.innerHTML = '';
-    let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
 
-    cart.forEach((item, index) => {
-      total += item.price;
+    const card = document.createElement('div');
+    card.className = 'product-card';
 
-      const cartItem = document.createElement('div');
-      cartItem.className = 'cart-item';
-
-      cartItem.innerHTML = `
-        <img src="bilder/${item.product.toLowerCase().replace(/ /g, '')}.png" alt="${item.product}">
-        <div class="cart-item-info">
-          <h4>${item.product}</h4>
-          <p>Pris: ${item.price} kr</p>
-        </div>
-        <button onclick="removeItem(${index})">Ta bort</button>
-      `;
-
-      cartContainer.appendChild(cartItem);
-    });
-
-    totalPriceEl.textContent = `Totalt: ${total} kr`;
-
-    if(cart.length === 0) {
-      cartContainer.innerHTML = '<p>Din varukorg är tom.</p>';
-      totalPriceEl.textContent = '';
-    }
-  }
-
-  function removeItem(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart();
-  }
-
-  clearCartBtn.addEventListener('click', () => {
-    cart = [];
-    localStorage.setItem('cart', JSON.stringify(cart));
-    renderCart();
+    card.innerHTML = `
+      <img src="bilder/${item.productImage || 'bukett1.jpeg'}" alt="${item.product}">
+      <div class="overlay-text">
+        <h3>${item.product}</h3>
+        <p>${item.price}</p>
+      </div>
+    `;
+    cartContainer.appendChild(card);
   });
 
-  renderCart();
+  document.getElementById('total-price').innerText = total;
+}
+
+// Rensa varukorg
+document.getElementById('clear-cart').addEventListener('click', () => {
+  localStorage.removeItem('cart');
+  displayCart();
+});
+
+// Kör vid start
+displayCart();
 </script>
 
 </body>
