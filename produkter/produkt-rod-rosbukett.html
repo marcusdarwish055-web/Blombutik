@@ -32,29 +32,35 @@
   </div>
 </header>
 
-<main class="product-page">
-  <h1>Röd Rosbukett</h1>
-  <img src="../bilder/bukett1.jpeg" alt="Röd Rosbukett">
-  <p class="price">499 kr</p>
-  <p>En vacker bukett med röda rosor, perfekt för alla tillfällen.</p>
-  <button onclick="addToCart('Röd Rosbukett',499)">Lägg till i varukorg</button>
+<main>
+  <section class="product-single">
+    <div class="product-card">
+      <img src="../bilder/bukett1.jpeg" alt="Röd Rosbukett">
+      <h3>Röd Rosbukett</h3>
+      <p class="price">499 kr</p>
+      <p>En vacker bukett med röda rosor som passar perfekt för alla tillfällen. Fräscha och doftande blommor levererade direkt till din dörr.</p>
+      <button onclick="addToCart('Röd Rosbukett',499)">Lägg till i varukorg</button>
+    </div>
+  </section>
 
   <section class="related-products">
     <h2>Du kanske gillar</h2>
-    <div class="related-grid">
+    <div class="product-grid">
       <div class="product-card">
-        <a href="produkt-vit-liljebukett.html">
+        <a href="produkt-vit-liljebukett.html" class="product-link">
           <img src="../bilder/bukett2.png" alt="Vit Liljebukett">
           <h3>Vit Liljebukett</h3>
           <p class="price">599 kr</p>
         </a>
+        <button onclick="addToCart('Vit Liljebukett',599)">Lägg till i varukorg</button>
       </div>
       <div class="product-card">
-        <a href="produkt-solrosbukett.html">
+        <a href="produkt-solrosbukett.html" class="product-link">
           <img src="../bilder/bukett3.png" alt="Solrosbukett">
           <h3>Solrosbukett</h3>
           <p class="price">449 kr</p>
         </a>
+        <button onclick="addToCart('Solrosbukett',449)">Lägg till i varukorg</button>
       </div>
     </div>
   </section>
