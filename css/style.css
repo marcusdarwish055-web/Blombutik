@@ -113,7 +113,7 @@ header h1 {
 }
 
 .product-card a {
-  text-decoration: none; /* tar bort streck under produktnamn */
+  text-decoration: none !important; /* tar bort strecket under produktnamn */
   color: inherit; /* behåller svart färg */
 }
 
