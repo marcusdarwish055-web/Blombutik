@@ -54,7 +54,7 @@ header h1 {
 }
 
 .nav-menu a {
-  text-decoration: none; /* tar bort streck */
+  text-decoration: none;
   color: #fff;
   padding: 8px 0;
   font-weight: bold;
@@ -75,9 +75,6 @@ header h1 {
   color: #fff;
   padding: 5px 20px;
   text-align: center;
-  border-radius: 5px;
-  margin: 10px;
-  font-size: 14px;
 }
 
 /* ===== Produktsektion ===== */
@@ -108,26 +105,19 @@ header h1 {
 
 .product-card img {
   width: 100%;
-  height: auto;
-  max-width: 400px; /* Förhindra inzoomning på mobil */
+  height: 250px;
   object-fit: contain;
   border-radius: 10px;
-  margin: 0 auto 10px auto;
+  margin-bottom: 10px;
 }
 
-.product-card h3 {
+.product-card h3,
+.product-card .price {
   margin: 5px 0;
   font-size: 18px;
   min-height: 45px;
-  text-decoration: none; /* tar bort streck */
-  color: #000; /* svart text */
-}
-
-.product-card .price {
-  margin: 5px 0 10px 0;
-  font-weight: bold;
-  text-decoration: none; /* tar bort streck */
-  color: #000;
+  text-decoration: none; /* TAR BORT STRECK UNDER NAMN OCH PRIS */
+  color: inherit; /* Behåller samma färg */
 }
 
 .product-card button {
@@ -144,6 +134,16 @@ header h1 {
 
 .product-card button:hover {
   background-color: #333;
+}
+
+/* ===== "Du kanske gillar" eller liknande sektion ===== */
+.related-products {
+  margin-top: 40px;
+}
+
+.related-products h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ===== Footer ===== */
@@ -168,33 +168,26 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 produkter bredvid varandra */
+    grid-template-columns: repeat(2, 1fr) !important; /* TVÅ PRODUKTER VID SIDSCROLL */
     gap: 10px;
     padding: 10px;
   }
 
   .product-card img {
-    max-width: 100%; /* bilder skalas korrekt */
-    height: auto;
+    height: 180px;
+    object-fit: contain; /* FÖRHINDRAR INZOOM PÅ MOBIL */
   }
 
-  .product-card h3 {
-    font-size: 14px;
-    min-height: 40px;
-  }
-
+  .product-card h3,
   .product-card .price {
     font-size: 14px;
+    min-height: 40px;
   }
 
   .product-card button {
     font-size: 13px;
     padding: 8px;
-  }
-
-  .info-bar {
-    font-size: 12px;
-    padding: 5px;
-    margin: 5px;
+    color: #fff; /* SÄKERSTÄLL ATT TEXTEN ÄR VIT */
+    background-color: #000;
   }
 }
