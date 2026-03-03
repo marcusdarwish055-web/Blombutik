@@ -54,7 +54,7 @@ header h1 {
 }
 
 .nav-menu a {
-  text-decoration: none;
+  text-decoration: none; /* tar bort streck */
   color: #fff;
   padding: 8px 0;
   font-weight: bold;
@@ -76,6 +76,8 @@ header h1 {
   padding: 5px 20px;
   text-align: center;
   border-radius: 5px;
+  margin: 10px;
+  font-size: 14px;
 }
 
 /* ===== Produktsektion ===== */
@@ -87,7 +89,7 @@ header h1 {
 /* ===== Produktgrid ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
   gap: 20px;
   padding: 20px;
 }
@@ -106,29 +108,28 @@ header h1 {
 
 .product-card img {
   width: 100%;
-  height: 250px;
-  object-fit: contain; /* fixar att bilden inte zoomas */
+  height: auto;
+  max-width: 400px; /* Förhindra inzoomning på mobil */
+  object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.product-card a {
-  text-decoration: none !important; /* tar bort strecket under produktnamn */
-  color: inherit; /* behåller svart färg */
+  margin: 0 auto 10px auto;
 }
 
 .product-card h3 {
   margin: 5px 0;
   font-size: 18px;
   min-height: 45px;
+  text-decoration: none; /* tar bort streck */
+  color: #000; /* svart text */
 }
 
 .product-card .price {
   margin: 5px 0 10px 0;
   font-weight: bold;
+  text-decoration: none; /* tar bort streck */
+  color: #000;
 }
 
-/* ===== Lägg till i varukorg knapp ===== */
 .product-card button {
   background-color: #000;
   color: #fff;
@@ -167,13 +168,14 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 produkter bredvid varandra */
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 produkter bredvid varandra */
     gap: 10px;
     padding: 10px;
   }
 
   .product-card img {
-    height: 180px;
+    max-width: 100%; /* bilder skalas korrekt */
+    height: auto;
   }
 
   .product-card h3 {
@@ -188,5 +190,11 @@ footer {
   .product-card button {
     font-size: 13px;
     padding: 8px;
+  }
+
+  .info-bar {
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
   }
 }
