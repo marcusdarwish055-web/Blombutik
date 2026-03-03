@@ -80,48 +80,38 @@ header h1 {
   font-weight: bold;
 }
 
-/* ===== Produktsektion ===== */
-.products h2 {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* ===== Produktgrid ===== */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Desktop */
-  gap: 20px;
+/* ===== Produktdetaljer ===== */
+.single-product {
   padding: 20px;
-}
-
-/* ===== Produktkort ===== */
-.product-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
   text-align: center;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
-  height: 100%;
 }
 
-.product-card img {
+.single-product img {
   width: 100%;
-  height: 250px;
-  object-fit: contain;
-  border-radius: 10px;
+  max-width: 500px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+.single-product h2 {
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
-.product-card h3,
-.product-card .price {
-  margin: 5px 0;
-  font-size: 18px;
-  text-decoration: none; /* tar bort streck under */
-  color: #000; /* svart text */
+.single-product .price {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
+.single-product .description {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Lägg till i varukorg */
+.single-product button,
 .product-card button {
   background-color: #000;
   color: #fff;
@@ -129,13 +119,59 @@ header h1 {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto;
+  margin-top: 10px;
   font-weight: bold;
   transition: background 0.2s;
 }
 
+.single-product button:hover,
 .product-card button:hover {
   background-color: #333;
+}
+
+/* ===== Relaterade produkter ===== */
+.related-products {
+  margin-top: 40px;
+}
+
+.related-products h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Produktkort ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 produkter bredvid varandra på mobil & desktop */
+  gap: 15px;
+  padding: 0 20px 20px 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3,
+.product-card .price {
+  margin: 5px 0;
 }
 
 /* ===== Footer ===== */
@@ -146,41 +182,27 @@ footer {
   color: #fff;
 }
 
-/* ===== Laptop ===== */
-@media (max-width: 1200px) {
+/* ===== Media Queries ===== */
+@media (min-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ===== Mobil ===== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 32px;
-  }
-
+@media (min-width: 1200px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 produkter bredvid varandra på mobil */
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .product-card img {
-    height: 180px;
+  .single-product h2 {
+    font-size: 40px;
   }
 
-  .product-card h3,
-  .product-card .price {
-    font-size: 14px;
-    min-height: 40px;
+  .single-product .price {
+    font-size: 24px;
   }
 
-  .product-card button {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  .info-bar {
-    font-size: 14px;
+  .single-product .description {
+    font-size: 18px;
   }
 }
